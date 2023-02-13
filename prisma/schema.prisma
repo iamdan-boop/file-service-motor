@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model publicfile {
+  id         String @id @default(uuid())
+  bucketPath String
+  filename   String @default("")
+  mimeType   String @default("")
+}
